@@ -1,5 +1,5 @@
-var path = require('path');
 // var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
   entry: './index.js',
@@ -14,21 +14,17 @@ module.exports = {
         test: /\.(js|jsx)$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
-        // query: {
-        //   presets: ['es2015', 'react'],
-        //   query: {
-        //     plugins: ['transform-decorators-legacy' ],
-        //     presets: ['es2015', 'stage-0', 'react']
-        //   }
-        // }
       }
     ]
   },
   stats: {
-    colors: true
+    colors: true,
   },
   devtool: 'source-map',
   resolve: {
     extensions: ['.jsx', '.js', '.json'],
+  },
+  devServer: {
+    historyApiFallback: true
   }
 };
